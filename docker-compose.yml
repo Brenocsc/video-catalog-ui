@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+
+  catalog-ui:
+    image: node:16-alpine
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: npm run start
+    ports:
+      - 3000:3000
+    networks:
+      - catalog_network
+
+networks:
+  catalog_network:
